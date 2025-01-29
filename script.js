@@ -171,21 +171,3 @@ async function checkReload() {
 
 // Appel de la fonction régulièrement
 setInterval(checkReload, 100); // Vérifie toutes les secondes
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll('.hidden'); // Sélectionne tous les éléments cachés
-  
-    elements.forEach((el, index) => {
-      setTimeout(() => {
-        el.classList.add('animate');
-        el.classList.remove('hidden'); // Supprime la classe "hidden" pour commencer l'animation
-      }, index * 50); // Délais personnalisés (300ms entre chaque élément)
-  
-      // Écoute la fin de l'animation pour supprimer la classe "animate"
-      el.addEventListener('animationend', () => {
-        el.classList.remove('animate'); // Supprime la classe "animate" après l'animation
-      });
-    });
-  });
-  

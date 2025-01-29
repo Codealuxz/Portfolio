@@ -31,7 +31,8 @@
           <p>
             <moy class="hidden">Salut, je suis</moy><br>
             <gr class="hidden">Morgan Mazza</gr><br>
-            <fin class="hidden">Voici mon </fin><vl class="hidden">portfolio</vl>
+            <fin class="hidden">Voici mon </fin>
+            <vl class="hidden">portfolio</vl>
           <div class="social_link">
             <a target="_blank" class="noef hidden" href="https://youtube.com/@codealuxz">
               <svg class="youtube_v" viewBox="0 0 256 180" xmlns="http://www.w3.org/2000/svg"
@@ -76,15 +77,36 @@
 
 
     <div class="second">
-      
+
 
     </div>
     <div class="third">
-      
+
     </div>
 
   </main>
-  <script src="script.js"></script>
+  <script>
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll('.hidden'); // Sélectionne tous les éléments cachés
+
+      elements.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('animate');
+          el.classList.remove('hidden'); // Supprime la classe "hidden" pour commencer l'animation
+        }, index * 50); // Délais personnalisés (300ms entre chaque élément)
+
+        // Écoute la fin de l'animation pour supprimer la classe "animate"
+        el.addEventListener('animationend', () => {
+          el.classList.remove('animate'); // Supprime la classe "animate" après l'animation
+        });
+      });
+    });
+
+
+  </script>
+  <!--<script src="script.js"></script>!-->
 </body>
 
 </html>
