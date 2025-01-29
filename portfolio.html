@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfoliocss.css">
+    <link rel="icon" href="icon/logo.png" sizes="32x32" type="image/png">
+
+</head>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<body> <!-- Mode nuit par défaut -->
+    <header>
+        <h2 class="morgan">Morgan<div class="blanc">‎ ‎ Mazza</div>
+        </h2>
+        <nav class="nav-bar">
+            <a href="index.html" class="accueil">Accueil</a>
+            <a href="portfolio.html" class="portfolio sel">Portfolio</a>
+            <a href="contact.html" class="contact">Contact</a>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <div class="containt_wrap">
+            <div class="wrapperpf">
+                <h2 class="titlepf">Jeux</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front-content">
+                            <p>SPITA</p>
+                        </div>
+                        <div class="content"><br>
+                            <p class="heading">Spita</p>
+                            <p>
+                                "Spita" est un jeu de plateforme captivant créé sur Godot. Avec des checkpoints bien
+                                placés
+                                et la possibilité de changer de skin, l'objectif est d'avancer à travers des niveaux
+                                remplis
+                                de nouvelles mécaniques et de plus en plus durs.
+                            </p>
+                            <a href="https://codealuxz.itch.io/spita" target="_blank">
+                                <button class="ui-btn">
+                                    <span>
+                                        Jouer
+                                    </span>
+                                </button>
+                            </a>
+                            <a href="https://codealuxz.itch.io/spitaexe" target="_blank">
+                                <button class="ui-btn">
+                                    <span>
+                                        Télécharger
+                                    </span>
+                                </button>
+                            </a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front-content">
+                            <p>PROTONIX</p>
+                        </div>
+                        <div class="content">
+                            <p class="heading">Protonix</p>
+                            <p>
+                                "Protonix" est un jeu d'esquive où les joueurs doivent éviter des ennemis. Il y a trois
+                                modes de jeu : Dodge : ennemis arrivent seulement de la droite, Normal : ennemis
+                                arrivent de
+                                partout, et Hard : mode normal mais en plus dur.
+                            </p>
+                            <a href="https://codealuxz.itch.io/protonix" target="_blank">
+                                <button class="ui-btn">
+                                    <span>
+                                        Jouer
+                                    </span>
+                                </button>
+                            </a>
+                            <br>
+                        </div>
+                    </div>
+                </div><br>
+            </div>
+            <div class="wrapperpf2">
+                <h2 class="titlepf">Sites</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front-content">
+                            <p>CHATILUM</p>
+                        </div>
+                        <div class="content">
+                            <p class="heading">Chatilum</p>
+                            <p>
+                                "Chatilum" est un site de chat en ligne instantané qui permet de discuter en direct,
+                                avec
+                                des fonctionnalités d'envoi d'images ou fichier, de messages privés et bien d'autres
+                            </p>
+                            <a href="https://chatilum.netlify.app/1.html" target="_blank">
+                                <button class="ui-btn">
+                                    <span>
+                                        Visiter
+                                    </span>
+                                </button>
+                            </a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front-content">
+                            <p>PKTC</p>
+                        </div>
+                        <div class="content">
+                            <p class="heading">PKTC</p>
+                            <p>
+                                "PKTC" est un site dédié aux astuces pour ordinateur, rédigées par moi.
+
+                            </p>
+                            <a href="https://pktc.netlify.app/" target="_blank">
+                                <button class="ui-btn">
+                                    <span>
+                                        Visiter
+                                    </span>
+                                </button>
+                            </a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front-content">
+                            <p>Tatyasse</p>
+                        </div>
+                        <div class="content">
+                            <p class="heading">Tatyasse</p>
+                            <p>
+                                "Tatyasse" est un site où je mets mes meilleures photos. Un espace pour découvrir mes talents en photographie.
+                            </p>
+                            <a href="https://tatyasse.netlify.app/" target="_blank">
+                                <button class="ui-btn">
+                                    <span>
+                                        Visiter
+                                    </span>
+                                </button>
+                            </a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
