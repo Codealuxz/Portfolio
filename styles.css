@@ -336,7 +336,7 @@ moy:hover {
   pointer-events: none;
   transition: none;
   position: absolute;
-  display: block;
+  display: none;
   width: 30px;
   height: 30px;
   border-radius: 20px;
@@ -595,6 +595,8 @@ flex-grow: 0;
   display: flex;
   justify-content: left;
   align-items: center;
+  position: relative;
+  z-index: 10 !important;
 }
 
 .tagla span {
@@ -685,6 +687,17 @@ flex-grow: 0;
   @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
   @import 'normalize.css';
 
+  @media(max-height: 760px) {
+    section {
+      top: 150px;
+    }
+    .scrollers {
+      width: 75vw !important;
+      max-width: 1000px !important;
+      min-width: 0px;
+    }
+  }
+
   .panel {
     display: none !important;
   }
@@ -767,6 +780,9 @@ flex-grow: 0;
     display: flex;
     flex-direction: column-reverse;
     justify-self: center;
+    position: relative;
+    top: -55px;
+    left: -50px;
     translate: 0 calc(50% + (var(--gap)));
   }
 
@@ -940,32 +956,40 @@ flex-grow: 0;
       grid-template: 1fr / 1fr 1fr;
     }
   }
+
   /*faire que cha que article ai un z index differant */
   .title-wrap:nth-of-type(1) {
     z-index: 5;
   }
+
   .title-wrap:nth-of-type(2) {
     z-index: 4;
   }
+
   .title-wrap:nth-of-type(3) {
     z-index: 3;
   }
+
   .title-wrap:nth-of-type(4) {
     z-index: 2;
   }
+
   .content-wrap:nth-of-type(1) {
     z-index: 5;
   }
+
   .content-wrap:nth-of-type(2) {
     z-index: 4;
   }
+
   .content-wrap:nth-of-type(3) {
     z-index: 5;
   }
+
   .content-wrap:nth-of-type(4) {
     z-index: 2;
   }
-  
+
   #bg {
     position: absolute;
     top: 350px;
@@ -974,18 +998,23 @@ flex-grow: 0;
     height: 400px;
     background-color: var(--background-color);
   }
-  .bga1{
+
+  .bga1 {
     z-index: 4;
   }
-  .bga2{
+
+  .bga2 {
     z-index: 3;
   }
-  .bga3{
+
+  .bga3 {
     z-index: 2;
   }
-  .bga4{
+
+  .bga4 {
     z-index: 1;
   }
+
   @supports (animation-timeline: scroll()) {
     :root {
       timeline-scope: --section-one, --section-two, --section-three,
