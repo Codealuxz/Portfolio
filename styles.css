@@ -322,7 +322,7 @@ moy:hover {
 .cursor {
   pointer-events: none;
   position: fixed;
-  display: block;
+  display: none;
   transition: mix-blend-mode 0.5s ease-out;
   border-radius: 0;
   mix-blend-mode: difference;
@@ -336,7 +336,7 @@ moy:hover {
   pointer-events: none;
   transition: none;
   position: absolute;
-  display: none;
+  display: block;
   width: 30px;
   height: 30px;
   border-radius: 20px;
