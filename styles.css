@@ -1228,7 +1228,10 @@ flex-grow: 0;
     border-top: solid 5px var(--text-color);
     padding-top: 40px;
   }
+  article:nth-of-type(1){
+    border-top: none !important;
 
+  }
   .panel {
     display: flex;
     justify-self: center;
