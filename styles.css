@@ -185,7 +185,7 @@
 
 :root {
   --first-height: 80vh;
-  --second-height: 60vh;
+  --second-height: 528.60px;
   --third-height: 400vh;
   --four-height: 10vh;
   --outline-color: #70768257;
@@ -292,7 +292,6 @@ p {
 .mov {
   position: relative;
   top: 0px;
-
 }
 
 vl {
@@ -302,28 +301,28 @@ vl {
 }
 
 vl:hover {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 gr {
-  font-size: 55px;
-  margin: 27px;
+  font-size: 65px;
+  margin: 1.41vw;
   padding: 0;
   position: relative;
-  top: -10.5px;
+  top: -5px;
   margin-bottom: 0;
 }
 
 gr:hover {
-  font-size: 60px;
+  font-size: 75px;
 }
 
 moy {
-  font-size: 42px;
-  margin: -2px;
+  font-size: 52px;
+  margin: -0.10px;
   padding: 0;
   position: relative;
-  top: -10px;
+  top: -4px;
 }
 
 moy:hover {
@@ -342,8 +341,8 @@ moy:hover {
   transition: mix-blend-mode 0.5s ease-out;
   border-radius: 0;
   mix-blend-mode: difference;
-  top: 0;
-  left: 0;
+  top: -10px !important;
+  left: -10px !important;
   z-index: 9999;
   border: #C2E6FF 2px solid;
 }
@@ -551,13 +550,13 @@ header {
 /* Salut, je suis Morgan Mazza Voici mon portfolio */
 .textepresentation {
   position: absolute;
-  left: 10%;
+  left: 20%;
   top: calc(50% - 102px);
   display: flex;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-size: 34px;
+  font-size: 40px;
   color: var(--text-color);
 }
 
@@ -574,6 +573,14 @@ header {
   animation: relan 5s infinite;
 }
 
+.adder {
+  position: absolute;
+  top: 30px;
+  filter: brightness(200);
+  right: -50px;
+  width: 100px;
+}
+
 .social_link {
   /* Auto layout */
   display: flex;
@@ -582,8 +589,8 @@ header {
   padding: 0px;
   gap: 25px;
   position: absolute;
-  margin-left: -10px;
-  bottom: -80px;
+  margin-left: -40.5px;
+  bottom: -130px;
 }
 
 .noef::after {
@@ -1337,13 +1344,15 @@ header {
   left: 0;
   width: 100%;
   height: calc(var(--second-height) + var(--first-height) + var(--third-height) + var(--four-height)) !important;
-  --color: rgba(255, 255, 255, 0.032);
+  --color: rgba(255, 255, 255, 0.027);
   background-color: transparent;
   background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
     linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
   background-size: 60.2px 60.2px;
-  z-index: 999;
+  z-index: 2;
+  pointer-events: none;
 }
+
 
 .tile_sec {
   position: absolute;
@@ -1572,11 +1581,15 @@ html {
 /* ▀█▀ ▄▀█ █▄▄ █▀▀ ▀█▀ ▀█▀ █▀▀ */
 /*  █  █▀█ █▄█ ██▄  █   █  ██▄ */
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1325px) {
   .scrollers {
     width: 100vw;
     max-width: 800px;
     min-width: 0px;
+  }
+
+  .adder {
+    width: 80px;
   }
 
   ah {
@@ -1600,7 +1613,7 @@ html {
 
   .logo {
     position: absolute;
-    top: 380px;
+    top: 400px;
     right: calc(50% - 200px);
   }
 
@@ -1673,7 +1686,7 @@ html {
     margin: initial !important;
   }
 
-  .nav-bar{
+  .nav-bar {
     margin-right: 10px !important;
   }
 
