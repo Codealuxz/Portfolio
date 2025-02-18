@@ -184,11 +184,11 @@
 
 
 :root {
-  --first-height: 80%;
-  --second-height: 60%;
-  --third-height: 320%;
-  --four-height: 60%;
-
+  --first-height: 80vh;
+  --second-height: 60vh;
+  --third-height: 400vh;
+  --four-height: 10vh;
+  --outline-color: #70768257;
   --text-highlight: #70b8ff;
   --text-color: #F4F8FF;
   --primer-color: #1D2E62;
@@ -211,8 +211,17 @@ main {
   flex: 1;
   margin: 0;
   width: 100%;
-  padding-bottom: 60px;
-  /* Ajustez cette valeur en fonction de la taille de votre footer */
+  height: calc(var(--third-height)) !important;
+}
+
+.outlinegen {
+  width: calc(100% - 154px) !important;
+  height: calc(var(--second-height) + var(--first-height) + var(--third-height) + var(--four-height)) !important;
+  border-left: var(--outline-color) solid;
+  border-right: var(--outline-color) solid;
+  margin-left: 74px;
+  margin-right: 80px;
+  position: absolute;
 }
 
 button {
@@ -282,7 +291,8 @@ p {
 
 .mov {
   position: relative;
-  top: 10px;
+  top: 0px;
+
 }
 
 vl {
@@ -297,8 +307,11 @@ vl:hover {
 
 gr {
   font-size: 55px;
-  margin: 10px;
+  margin: 27px;
   padding: 0;
+  position: relative;
+  top: -10.5px;
+  margin-bottom: 0;
 }
 
 gr:hover {
@@ -307,8 +320,10 @@ gr:hover {
 
 moy {
   font-size: 42px;
-  margin: -10px;
+  margin: -2px;
   padding: 0;
+  position: relative;
+  top: -10px;
 }
 
 moy:hover {
@@ -405,7 +420,7 @@ header {
   right: 0;
   top: -1px;
   margin: 40px;
-  margin-right: 60px;
+  margin-right: 70px;
 }
 
 
@@ -481,19 +496,7 @@ header {
   text-decoration: none;
 }
 
-/* DarkMode */
-/*
-width: 22.6px;
-height: 22.6px;
 
-background: #E8EAED;
-*/
-/* Inside auto layout */
-/*
-flex: none;
-order: 3;
-flex-grow: 0;
-*/
 
 .morgan {
   position: absolute;
@@ -509,6 +512,21 @@ flex-grow: 0;
   align-items: center;
   color: var(--text-highlight);
   margin: 40px;
+  margin-left: 30px;
+  background: transparent;
+  z-index: 999;
+}
+
+.morgan::after {
+  content: '';
+  background-color: transparent;
+  background: linear-gradient(180deg, transparent 0%, var(--background-color) 30%, var(--background-color) 70%, transparent 100%);
+  position: absolute;
+  top: 0;
+  left: 44px;
+  width: 2px;
+  height: 100%;
+  z-index: -1000;
 }
 
 
@@ -527,7 +545,6 @@ flex-grow: 0;
   height: 100%;
   left: 0;
   top: 0;
-
 }
 
 
@@ -535,7 +552,7 @@ flex-grow: 0;
 .textepresentation {
   position: absolute;
   left: 10%;
-  top: calc(50% - 108px);
+  top: calc(50% - 102px);
   display: flex;
   font-family: 'Poppins';
   font-style: normal;
@@ -563,8 +580,9 @@ flex-grow: 0;
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
-  gap: 28px;
+  gap: 25px;
   position: absolute;
+  margin-left: -10px;
   bottom: -80px;
 }
 
@@ -1285,6 +1303,21 @@ flex-grow: 0;
   height: var(--first-height);
   display: flex;
   justify-content: end;
+  padding-bottom: 5px;
+}
+
+.firstout {
+  position: absolute;
+  top: 104px;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-right: 10px;
+  height: var(--first-height);
+  display: flex;
+  justify-content: end;
+  padding-bottom: 20px !important;
+  border-top: var(--outline-color) solid;
+  border-bottom: var(--outline-color) solid;
 }
 
 .second {
@@ -1296,6 +1329,20 @@ flex-grow: 0;
   height: var(--second-height);
   display: flex;
   justify-content: end;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--second-height) + var(--first-height) + var(--third-height) + var(--four-height)) !important;
+  --color: rgba(255, 255, 255, 0.032);
+  background-color: transparent;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 60.2px 60.2px;
+  z-index: 999;
 }
 
 .tile_sec {
@@ -1323,17 +1370,17 @@ flex-grow: 0;
   justify-content: center;
 }
 
-.four {
+footer {
   position: absolute;
-  top: calc(var(--second-height) + 20px + var(--first-height) + 120px + var(--third-height) + 120px);
-  width: calc(100% - 160px);
-  margin-left: 80px;
-  margin-right: 80px;
+  bottom: calc(-1 * (var(--second-height) + var(--first-height) + var(--third-height) - 100vh - 105px));
+  width: calc(100% - 80px);
+  margin-left: 10px;
+  margin-right: 10px;
   height: var(--four-height);
-  display: flex;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
+  border-top: var(--outline-color) solid;
+  border-bottom: var(--outline-color) solid;
 }
 
 .contacte_logo_containt {
@@ -1355,6 +1402,7 @@ flex-grow: 0;
   height: 2.8em;
   border-radius: 0.9em;
   margin: 0 auto;
+  margin-left:-2px;
   text-decoration: none;
   transition: border 0.2s ease-out;
   position: absolute;
@@ -1561,8 +1609,25 @@ html {
     height: 350px;
     left: 0;
     top: 0;
-
   }
+
+  gr {
+    font-size: 55px;
+    margin: 17px;
+    position: relative;
+    top: -1px;
+    padding: 0;
+  }
+  .mov{
+    position: relative;
+    top: 10px;
+  }
+  moy {
+    font-size: 42px;
+    margin: -12px;
+    padding: 0;
+  }
+
 
   .second {
     display: flex;
@@ -1669,4 +1734,8 @@ html {
     width: 100%;
 
   }
+}
+
+footer p {
+  height: 50px !important;
 }
