@@ -187,7 +187,7 @@
   --first-height: 80vh;
   --second-height: 528.60px;
   --third-height: 400vh;
-  --four-height: 10vh;
+  --four-height: 88px;
   --outline-color: #70768257;
   --text-highlight: #70b8ff;
   --text-color: #F4F8FF;
@@ -1248,42 +1248,6 @@ header {
   }
 }
 
-@media(max-width: 768px) {
-  article {
-    position: relative;
-    top: 200px;
-    padding: 20px;
-    margin-bottom: -180px;
-    border-top: solid 5px var(--text-color);
-    padding-top: 40px;
-  }
-
-  article:nth-of-type(1) {
-    border-top: none !important;
-
-  }
-
-  .panel {
-    display: flex;
-    justify-self: center;
-    width: 200px;
-    filter: brightness(1.5);
-  }
-
-  article a {
-    position: relative;
-    left: 10px;
-    font-size: 1.5rem;
-    text-shadow: 0 0 20px var(--text-highlight);
-    color: var(--text-highlight);
-  }
-
-  article a:hover {
-    color: #b4b0ff;
-  }
-
-}
-
 /*  █████╗   ██████╗  ███████╗ ███╗   ██╗  ██████╗ ███████╗ ███╗   ███╗ ███████╗ ███╗   ██╗ ████████╗ */
 /* ██╔══██╗ ██╔════╝  ██╔════╝ ████╗  ██║ ██╔════╝ ██╔════╝ ████╗ ████║ ██╔════╝ ████╗  ██║ ╚══██╔══╝ */
 /* ███████║ ██║  ███╗ █████╗   ██╔██╗ ██║ ██║      █████╗   ██╔████╔██║ █████╗   ██╔██╗ ██║    ██║    */
@@ -1588,6 +1552,39 @@ html {
     min-width: 0px;
   }
 
+  :root {
+    --third-height: 2907.3px;
+    --four-height: 120px;
+  }
+
+  .third img {
+    width: 200px;
+    height: 100px;
+    z-index: 999;
+  }
+
+  article {
+    position: relative;
+    top: 200px;
+    margin-bottom: -150px;
+    display: grid;
+    justify-items: center;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  .content-wrap {
+    width: 60%;
+  }
+
+  footer {
+    width: calc(100% - 160px);
+    padding-left: 80px;
+    padding-right: 60px;
+  }
+
   .adder {
     width: 80px;
   }
@@ -1664,6 +1661,10 @@ html {
 /* █▀▀ █▀█ █▄█ █ ▀█ ██▄ */
 
 @media screen and (max-width: 725px) {
+  :root {
+    --first-height: 700px;
+  }
+
   .container {
     display: none;
   }
@@ -1698,6 +1699,15 @@ html {
     height: 400px !important;
   }
 
+  .textepresentation {
+    left: 40px;
+  }
+
+  .social_link {
+    position: relative;
+    margin: -2.5% !important;
+  }
+
   .logo {
     position: absolute;
     top: 470px;
@@ -1706,10 +1716,7 @@ html {
     height: 200px;
   }
 
-  :root {
-    --first-height: 900px;
-    --second-height: 80%;
-  }
+
 
   .morgan {
     position: absolute;
@@ -1779,4 +1786,11 @@ html {
 
 footer p {
   height: 50px !important;
+}
+
+@media screen and (max-width: 440px) {
+  .adder {
+    top: -40px;
+    right: 60px;
+  }
 }
