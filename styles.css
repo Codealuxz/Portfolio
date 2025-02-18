@@ -181,8 +181,6 @@
 /* ╚██████╔╝ ███████╗ ╚██████╔╝ ██████╔╝ ██║  ██║ ███████╗ */
 /*  ╚═════╝  ╚══════╝  ╚═════╝  ╚═════╝  ╚═╝  ╚═╝ ╚══════╝ */
 
-
-
 :root {
   --first-height: 80vh;
   --second-height: 528.60px;
@@ -216,7 +214,7 @@ main {
 
 .outlinegen {
   width: calc(100% - 154px) !important;
-  height: calc(var(--second-height) + var(--first-height) + var(--third-height) + var(--four-height)) !important;
+  height: calc(var(--second-height) + var(--first-height) + var(--third-height) + var(--four-height) - 100px) !important;
   border-left: var(--outline-color) solid;
   border-right: var(--outline-color) solid;
   margin-left: 74px;
@@ -1309,7 +1307,7 @@ article h2{
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(var(--second-height) + var(--first-height) + var(--third-height) + var(--four-height)) !important;
+  height: calc(var(--second-height) + var(--first-height) + var(--third-height) + var(--four-height) - 150px) !important;
   --color: rgba(255, 255, 255, 0.027);
   background-color: transparent;
   background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
