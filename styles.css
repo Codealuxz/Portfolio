@@ -1663,13 +1663,10 @@ html {
 @media screen and (max-width: 725px) {
   :root {
     --first-height: 700px;
+    --four-height: 250px;
   }
 
   .container {
-    display: none;
-  }
-
-  .outlinegen {
     display: none;
   }
 
@@ -1681,10 +1678,20 @@ html {
     display: none;
   }
 
+  .content-wrap {
+    width: 80%;
+    height: 550px;
+  }
+
   footer {
     border: none !important;
-    width: 100%;
-    margin: initial !important;
+    width: 90%;
+    bottom: calc(-1 * (var(--second-height) + var(--first-height) + var(--third-height) - 100vh + 80px));
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-left: 5% !important;
+    border-top: var(--outline-color) solid !important;
+    border-bottom: var(--outline-color) solid !important;
   }
 
   .nav-bar {
@@ -1782,6 +1789,12 @@ html {
     width: 100%;
 
   }
+
+  footer p {
+    margin-top: 50px;
+    height: 50px !important;
+  }
+
 }
 
 footer p {
