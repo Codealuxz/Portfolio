@@ -422,7 +422,9 @@ header {
   margin-right: 70px;
 }
 
-
+article h2{
+  font-size: 2.6em !important;
+}
 /* Accueil */
 .accueil {
   width: 62px;
