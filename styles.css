@@ -186,7 +186,8 @@
 :root {
   --first-height: 80%;
   --second-height: 60%;
-  --third-height: 80%;
+  --third-height: 320%;
+  --four-height: 60%;
 
   --text-highlight: #70b8ff;
   --text-color: #F4F8FF;
@@ -1316,6 +1317,17 @@ flex-grow: 0;
   height: auto;
   display: flex;
   justify-content: center;
+}
+.four{
+  position: absolute;
+  top: calc(var(--second-height) + 20px + var(--first-height) + 120px + var(--third-height) + 120px);
+  width: calc(100% - 160px);
+  margin-left: 80px;
+  margin-right: 80px;
+  height: var(--four-height);
+  display: flex;
+  justify-content: center;
+  background-color: red;
 }
 
 .contacte_logo_containt {
