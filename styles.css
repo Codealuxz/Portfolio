@@ -34,30 +34,41 @@
     rotate: -10deg;
   }
 }
+/* Assure que les balises non standards sont bien animables */
+moy, gr, fin, vl {
+  display: inline-block; /* ou block si nécessaire */
+}
 
 /* Animation de glissement depuis le bas */
 @keyframes slideUp {
   from {
-    position: relative;
-    top: 100px;
+    transform: translateY(100px);
     opacity: 0;
   }
-
   to {
+    transform: translateY(0);
     opacity: 1;
-    position: relative;
-    top: 0;
   }
 }
 
 /* Classe générale pour l'animation */
 .animate {
   animation: slideUp 0.3s ease-out;
+  will-change: transform, opacity;
+  animation-fill-mode: both;
 }
 
+/* Cache les éléments avant l'animation */
 .hidden {
   opacity: 0;
+  visibility: hidden;
 }
+
+/* Une fois animés, ils deviennent visibles */
+.animate {
+  visibility: visible;
+}
+
 
 
 @keyframes relan {
@@ -196,7 +207,7 @@
 
 
 * {
-  transition: font-size 0.25s, top 0.25s, translate 0.25s ease-in-out, scale 0.5s ease-in-out, margin 0.5s ease-in-out, rotate 0.3s ease-in-out, width 1s ease-in-out, height 1s ease-in-out, opacity 1s ease-in-out, background-color 0.5s, color 0s, box-shadow 0.5s, text-shadow 0.5s, transform 1s, text-decoration 0.5s;
+  transition: font-size 0.25s, top 0.25s, translate 0.25s ease-in-out, scale 0.5s ease-in-out, margin 0.5s ease-in-out, rotate 0.3s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out, opacity 1s ease-in-out, background-color 0.5s, color 0s, box-shadow 0.5s, text-shadow 0.5s, transform 1s, text-decoration 0.5s;
   z-index: 1;
 }
 
@@ -264,6 +275,24 @@ a:hover::after {
   width: 100%;
 }
 
+.morgan {
+  position: absolute;
+  height: 50px;
+  left: 0px !important;
+  top: 0px;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 22px;
+  padding: 10px;
+  /* or 98% */
+  display: flex;
+  align-items: center;
+  color: var(--text-highlight);
+  margin: 40px;
+  margin-left: 30px;
+  background: transparent;
+  z-index: 999;
+}
 
 p {
   padding: 0;
@@ -289,7 +318,7 @@ p {
 
 .mov {
   position: relative;
-  top: 0px;
+  top: -25px;
 }
 
 vl {
@@ -301,13 +330,12 @@ vl {
 vl:hover {
   font-size: 35px;
 }
-
 gr {
   font-size: 65px;
   margin: 1.41vw;
   padding: 0;
   position: relative;
-  top: -5px;
+  top: -32px;
   margin-bottom: 0;
 }
 
@@ -327,6 +355,15 @@ moy:hover {
   font-size: 60px;
 }
 
+moy:hover ~ .adder {
+  top: 42px;
+}
+gr:hover ~ .adder {
+  width: 120px;
+  top: 20px;
+  right: -60px;
+}
+
 .showoed {
   -webkit-filter: drop-shadow(0px 0px 5px #ffffff);
   filter: drop-shadow(0px 0px 5px #222);
@@ -339,8 +376,6 @@ moy:hover {
   transition: mix-blend-mode 0.5s ease-out;
   border-radius: 0;
   mix-blend-mode: difference;
-  top: -10px !important;
-  left: -10px !important;
   z-index: 9999;
   border: #C2E6FF 2px solid;
 }
@@ -355,7 +390,15 @@ moy:hover {
   border-radius: 20px;
   background-color: #fff;
 }
-
+.cacheMis{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-color);
+  z-index: 99999;
+}
 
 /* ██████╗   █████╗   ██████╗ ██╗  ██╗  ██████╗  ██████╗   ██████╗  ██╗   ██╗ ███╗   ██╗ ██████╗  */
 /* ██╔══██╗ ██╔══██╗ ██╔════╝ ██║ ██╔╝ ██╔════╝  ██╔══██╗ ██╔═══██╗ ██║   ██║ ████╗  ██║ ██╔══██╗ */
@@ -497,24 +540,7 @@ article h2{
 
 
 
-.morgan {
-  position: absolute;
-  height: 50px;
-  left: 0px;
-  top: 0px;
-  font-style: normal;
-  font-size: 22px;
-  line-height: 22px;
-  padding: 10px;
-  /* or 98% */
-  display: flex;
-  align-items: center;
-  color: var(--text-highlight);
-  margin: 40px;
-  margin-left: 30px;
-  background: transparent;
-  z-index: 999;
-}
+
 
 .morgan::after {
   content: '';
@@ -579,6 +605,7 @@ article h2{
   filter: brightness(200);
   right: -50px;
   width: 100px;
+  transition: all 0.25s !important;
 }
 
 .social_link {
@@ -1384,12 +1411,14 @@ footer {
   transition: border 0.2s ease-out;
   position: absolute;
   bottom: 0px;
+  transition: all 0.25s;
   left: calc(50% - 0.85em);
 
 }
 
 .mouseDown_inf:hover {
   border: 2px solid rgba(255, 255, 255, 0.7);
+  scale: 1.27;
 }
 
 .mouseDown_inf span {
@@ -1459,11 +1488,13 @@ footer {
 .scrollers {
   position: absolute;
   top: 170px;
-  max-width: 50%;
+  max-width: 70%;
   min-width: 500px;
   color: var(--text-color) !important;
 }
-
+.scaled{
+  transform: scale(1.2);
+}
 .scroller__inner {
   padding-block: 1rem;
   display: flex;

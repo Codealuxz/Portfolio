@@ -1,20 +1,27 @@
 
 let animationRunning = true;
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll('.hidden'); // Sélectionne tous les éléments cachés
+  setTimeout(() => {
+    const elements = document.querySelectorAll('.hidden');
 
-  elements.forEach((el, index) => {
-    setTimeout(() => {
-      el.classList.add('animate');
-      el.classList.remove('hidden'); // Supprime la classe "hidden" pour commencer l'animation
-    }, index * 40); // Délais personnalisés (300ms entre chaque élément)
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add('animate');
+        el.classList.remove('hidden');
 
-    // Écoute la fin de l'animation pour supprimer la classe "animate"
-    el.addEventListener('animationend', () => {
-      el.classList.remove('animate'); // Supprime la classe "animate" après l'animation
+        // 🔥 Force un reflow pour les éléments absolus 🔥
+        el.offsetHeight;
+
+      }, index * 40);
+
+      el.addEventListener('animationend', () => {
+        el.classList.remove('animate');
+      });
     });
-  });
+  }, 10);
 });
+
+
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
 
@@ -41,8 +48,8 @@ function animateCircles() {
 
   circles.forEach(function (circle, index) {
     if (hoving) {
-      circle.style.left = x - 25 + "px";
-      circle.style.top = y - 25 + "px";
+      circle.style.left = x - 15 + "px";
+      circle.style.top = y - 15 + "px";
     } else {
       circle.style.left = x - 15 + "px";
       circle.style.top = y - 15 + "px";
@@ -78,10 +85,26 @@ window.addEventListener("mouseover", function () {
 //quand le cuseur survole un lien
 document.querySelectorAll("a").forEach(function (a) {
   a.addEventListener("mouseover", function () {
-    cursor.style.mixBlendMode = "overlay";        
+    circles.forEach(function (circle) {
+      circle.classList.add("scaled")
+    });
   });
   a.addEventListener("mouseout", function () {
-    cursor.style.mixBlendMode = "difference";
+    circles.forEach(function (circle) {
+      circle.classList.remove("scaled")
+    });
+  });
+});
+document.querySelectorAll(".mouseDown_inf").forEach(function (mouseDown_inf) {
+  mouseDown_inf.addEventListener("mouseover", function () {
+    circles.forEach(function (circle) {
+      circle.classList.add("scaled")
+    });
+  });
+  mouseDown_inf.addEventListener("mouseout", function () {
+    circles.forEach(function (circle) {
+      circle.classList.remove("scaled")
+    });
   });
 });
 
