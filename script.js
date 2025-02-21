@@ -136,7 +136,6 @@ function addAnimation() {
 }
 
 
-
 // Les 3 premiers éléments de la page sont invisibles
 document.querySelectorAll(".hidden").forEach((el) => {
   el.classList.remove("hidden");
