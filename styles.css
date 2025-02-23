@@ -391,7 +391,7 @@ gr:hover ~ .adder {
   background-color: #fff;
 }
 .cacheMis{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 40px;
