@@ -34,9 +34,14 @@
     rotate: -10deg;
   }
 }
+
 /* Assure que les balises non standards sont bien animables */
-moy, gr, fin, vl {
-  display: inline-block; /* ou block si nécessaire */
+moy,
+gr,
+fin,
+vl {
+  display: inline-block;
+  /* ou block si nécessaire */
 }
 
 /* Animation de glissement depuis le bas */
@@ -45,6 +50,7 @@ moy, gr, fin, vl {
     transform: translateY(100px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -330,6 +336,7 @@ vl {
 vl:hover {
   font-size: 35px;
 }
+
 gr {
   font-size: 65px;
   margin: 1.41vw;
@@ -355,10 +362,11 @@ moy:hover {
   font-size: 60px;
 }
 
-moy:hover ~ .adder {
+moy:hover~.adder {
   top: 42px;
 }
-gr:hover ~ .adder {
+
+gr:hover~.adder {
   width: 120px;
   top: 20px;
   right: -60px;
@@ -390,7 +398,8 @@ gr:hover ~ .adder {
   border-radius: 20px;
   background-color: #fff;
 }
-.cacheMis{
+
+.cacheMis {
   position: fixed;
   top: 0;
   left: 0;
@@ -463,9 +472,10 @@ header {
   margin-right: 70px;
 }
 
-article h2{
+article h2 {
   font-size: 2.6em !important;
 }
+
 /* Accueil */
 .accueil {
   width: 62px;
@@ -736,7 +746,7 @@ article h2{
   box-shadow: 0 0 30px var(--text-highlight);
 }
 
-.section--one{
+.section--one {
   position: relative;
   top: -45px;
 }
@@ -1492,9 +1502,11 @@ footer {
   min-width: 500px;
   color: var(--text-color) !important;
 }
-.scaled{
+
+.scaled {
   transform: scale(1.2);
 }
+
 .scroller__inner {
   padding-block: 1rem;
   display: flex;
@@ -1580,6 +1592,14 @@ html {
 /*  █  █▀█ █▄█ ██▄  █   █  ██▄ */
 
 @media screen and (max-width: 1325px) {
+
+  /*disable cirecle and reapir the mouse */
+  .circle {
+    display: none;
+  }
+
+
+
   .scrollers {
     width: 100vw;
     max-width: 800px;
@@ -1697,6 +1717,7 @@ html {
 @media screen and (max-width: 725px) {
   :root {
     --first-height: 700px;
+    --third-height: 3000px;
     --four-height: 250px;
   }
 
@@ -1839,5 +1860,11 @@ footer p {
   .adder {
     top: -40px;
     right: 60px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  body{
+    cursor: default !important;
   }
 }
