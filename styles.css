@@ -1593,12 +1593,6 @@ html {
 
 @media screen and (max-width: 1325px) {
 
-  /*disable cirecle and reapir the mouse */
-  .circle {
-    display: none;
-  }
-
-
 
   .scrollers {
     width: 100vw;
@@ -1719,6 +1713,10 @@ html {
     --first-height: 700px;
     --third-height: 3000px;
     --four-height: 250px;
+  }
+  /*disable cirecle and reapir the mouse */
+  .circle {
+    display: none;
   }
 
   .container {
