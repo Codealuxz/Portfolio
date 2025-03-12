@@ -1,4 +1,3 @@
-
 let animationRunning = true;
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
@@ -8,10 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         el.classList.add('animate');
         el.classList.remove('hidden');
-
-        // 🔥 Force un reflow pour les éléments absolus 🔥
-        el.offsetHeight;
-
       }, index * 40);
 
       el.addEventListener('animationend', () => {
@@ -70,14 +65,12 @@ function animateCircles() {
 
 animateCircles();
 
-//si le souris sort de l'écran ou n'est pas détecter
 window.addEventListener("mouseout", function () {
   cursor.style.display = "none";
 });
 //sinon, le curseur apparait
 window.addEventListener("mouseover", function () {
   cursor.style.display = "block";
-  //enlev la souris et ne laisse que les sercles et la dive curseur
   document.body.style.cursor = "none";
 
 });
@@ -110,23 +103,17 @@ document.querySelectorAll(".mouseDown_inf").forEach(function (mouseDown_inf) {
 
 const scrollers = document.querySelectorAll(".scrollers");
 
-// If a user hasn't opted in for recuded motion, then we add the animation
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
 }
 
 function addAnimation() {
   scrollers.forEach((scroller) => {
-    // add data-animated="true" to every `.scroller` on the page
     scroller.setAttribute("data-animated", true);
 
-    // Make an array from the elements within `.scroller-inner`
     const scrollerInner = scroller.querySelector(".scroller__inner");
     const scrollerContent = Array.from(scrollerInner.children);
 
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
@@ -135,8 +122,7 @@ function addAnimation() {
   });
 }
 
+if (navigator.userAgent.indexOf("Firefox") != -1) {
+  alert("Certaines fonctionnalités peuvent ne pas fonctionner correctement sur Firefox. Veuillez utiliser un navigateur Web différent pour une expérience optimale.");
+}
 
-// Les 3 premiers éléments de la page sont invisibles
-document.querySelectorAll(".hidden").forEach((el) => {
-  el.classList.remove("hidden");
-});
