@@ -105,7 +105,6 @@ vl {
 }
 
 
-/*
 @keyframes relan {
   0% {
     box-shadow: 0 0 30px #70B8FF;
@@ -126,8 +125,8 @@ vl {
   100% {
     box-shadow: 0 0 30px #70B8FF;
   }
-}*/
-
+}
+/*
 @keyframes relan {
   0% {
     box-shadow: 0 0 30px #70ff70;
@@ -148,7 +147,7 @@ vl {
   100% {
     box-shadow: 0 0 30px #88ff70;
   }
-}
+}*/
 
 
 @keyframes moveDot {
@@ -250,7 +249,7 @@ vl {
 /* ╚██████╔╝ ███████╗ ╚██████╔╝ ██████╔╝ ██║  ██║ ███████╗ */
 /*  ╚═════╝  ╚══════╝  ╚═════╝  ╚═════╝  ╚═╝  ╚═╝ ╚══════╝ */
 
-/*:root {
+:root {
   --first-height: 80vh;
   --second-height: 528.60px;
   --third-height: 400vh;
@@ -261,7 +260,7 @@ vl {
   --primer-color: #1D2E62;
   --card: #182449;
   --background-color: #0b0c10;
-}*/
+}/*
 :root {
   --first-height: 80vh;
   --second-height: 528.60px;
@@ -273,7 +272,7 @@ vl {
   --primer-color: #366740;
   --card: #2D5736;
   --background-color: #0b100b;
-}
+}*/
 
 * {
   transition: font-size 0.25s, top 0.25s, translate 0.25s ease-in-out, scale 0.5s ease-in-out, margin 0.5s ease-in-out, rotate 0.3s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out, opacity 1s ease-in-out, background-color 0.5s, color 0s, box-shadow 0.5s, text-shadow 0.5s, transform 1s, text-decoration 0.5s;
